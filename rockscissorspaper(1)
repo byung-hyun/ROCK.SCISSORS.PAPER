@@ -1,0 +1,81 @@
+package first;
+
+import java.util.Scanner;
+
+public class kbh20191458_mid1 {
+
+	public static void main(String[] args) {
+		
+	System.out.println("< 게임 시작 >");
+	Scanner scanner = new Scanner(System.in);
+	var awin = 1;
+	var bwin = 1;
+	while(true) {
+		int a = (int)(Math.random()*3)+1;
+		System.out.println("가위(1),바위(2),보(3)중 하나를 고르고 해당하는 숫자를 적어주세요");
+		int n = scanner.nextInt();
+		
+		if(a==1 && n==1) {
+			System.out.println("사용자:가위(1) 컴퓨터:가위(1) , 비겼습니다");
+			System.out.println('\n');
+		}
+		else if(a==1 && n==2) {
+			System.out.println("사용자:바위(2) 컴퓨터:가위(1) , 이겼습니다!");
+			System.out.println('\n');
+			awin++;
+		}
+		else if(a==1 && n==3) {
+			System.out.println("사용자:보(3) 컴퓨터:가위(1) , 졌습니다");
+			System.out.println('\n');
+			bwin++;
+		    
+		}
+		else if(a==2 && n==1) {
+			System.out.println("사용자:가위(1) 컴퓨터:바위(2) , 졌습니다");
+			System.out.println('\n');
+			bwin++;
+		
+		}
+		else if(a==2 && n==2) {
+			System.out.println("사용자:바위(2) 컴퓨터:바위(2) , 비겼습니다");
+			System.out.println('\n');
+		}
+		else if(a==2 && n==3) {
+			System.out.println("사용자:보(3) 컴퓨터:바위(2) , 이겼습니다!");
+			System.out.println('\n'); 
+			awin++;
+		}
+		else if(a==3 && n==1) {
+			System.out.println("사용자:가위(1) 컴퓨터:보(3) , 이겼습니다!");
+			System.out.println('\n');
+			awin++;
+		}
+		else if(a==3 && n==2) {
+			System.out.println("사용자:바위(2) 컴퓨터:보(3) , 졌습니다");
+			System.out.println('\n');
+			bwin++;
+		   
+		}	
+		else if(a==3 && n==3) {
+			System.out.println("사용자:보(3) 컴퓨터:보(3) , 비겼습니다");
+			System.out.println('\n');
+		}
+		else {
+		    System.out.println("잘못 입력하였습니다. 다시 입력해 주세요.");
+		}
+	
+		if (awin==4) {
+			System.out.println("사용자가 먼저 3판을 이겨 사용자가 이겼습니다!");
+			System.out.println("< 게임 종료 >");
+			break;
+		}
+		
+	    if (bwin==4) {
+			System.out.println("컴퓨터가 먼저 3판을 이겨 사용자가 졌습니다..");
+			System.out.println("< 게임 종료 >");
+			break;
+		}
+	
+	 }
+}
+}
